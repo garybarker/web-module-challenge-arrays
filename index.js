@@ -45,11 +45,12 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
+function copy(array){
   /*your code here*/
+  return [...array];
 }    
 
-
+console.log('task 1', copy(originalFlavors));
 
 
 
@@ -64,8 +65,13 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
+function is31Flavors(array){
  /*your code here*/
+ if(array.length === 31){
+   return true;
+ }else{
+   return false;
+ }
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -81,8 +87,10 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
+function addFlavor(array, flavor){
  /*your code here*/
+  array.unshift(flavor);
+  return array;
 }
 
 
@@ -97,8 +105,10 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
+function removeLastFlavor(array){
  /*your code here*/
+ array.pop();
+ return array;
 }
 
 
@@ -114,8 +124,9 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
+function getFlavorByIndex(array, index){
   /*your code here*/
+  return array[index];
 }
 
 
@@ -134,8 +145,14 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
+function removeFlavorByName(array, string){
   /*your code here*/
+  for(let i= 0; i < array.length; i++){
+    if(array[i] === string){
+      array.splice(i, 1);
+    }
+  }
+  return array;
 }
 
 
